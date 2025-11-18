@@ -1,6 +1,22 @@
 # commit-mate
 
+[![npm version](https://img.shields.io/npm/v/commit-mate.svg)](https://www.npmjs.com/package/commit-mate)
+[![npm downloads](https://img.shields.io/npm/dm/commit-mate.svg)](https://www.npmjs.com/package/commit-mate)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/commit-mate)](https://bundlephobia.com/package/commit-mate)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/ayaanraza9/commit-mate.svg?style=social&label=Star)](https://github.com/ayaanraza9/commit-mate)
+[![GitHub forks](https://img.shields.io/github/forks/ayaanraza9/commit-mate.svg?style=social&label=Fork)](https://github.com/ayaanraza9/commit-mate)
+
 A lightweight CLI tool for generating, linting, and creating commits with enforced formatting. Perfect for teams that want consistent commit messages with JIRA integration.
+
+## Package Statistics
+
+| Metric           | Value                        |
+| ---------------- | ---------------------------- |
+| **Package Size** | ~16KB (minified single file) |
+| **Node.js**      | >=14.0.0                     |
+| **License**      | MIT                          |
+| **Main File**    | `dist/cli.js`                |
 
 ## Features
 
@@ -61,6 +77,30 @@ This will:
 ```bash
 commit-mate commit --jira TB-123 --category feat --message "add login" --description "Implement login flow"
 ```
+
+### Using npm scripts
+
+If you have `commit-mate` installed locally in your project, you can add a commit script to your `package.json`:
+
+```json
+{
+	"scripts": {
+		"commit": "commit-mate commit"
+	}
+}
+```
+
+Then use it with:
+
+```bash
+npm run commit
+# or with bun
+bun run commit
+```
+
+This will run the interactive commit flow, checking for staged files and prompting for commit details.
+
+**Note:** The commit script is also available in this package itself. You can use `npm run commit` or `bun run commit` in this repository to test the tool.
 
 ## Commands
 
@@ -164,5 +204,5 @@ MIT
 
 ## Contributors
 
-- [Ayaan Raza] (https://github.com/ayaanraza9) - Creator
-- [Sawan Kumar] (https://github.com/Sawannrl123) - Maintainer
+- [Ayaan Raza](https://github.com/ayaanraza9) - Creator
+- [Sawan Kumar](https://github.com/Sawannrl123) - Maintainer
