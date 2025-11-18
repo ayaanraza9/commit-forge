@@ -1,11 +1,11 @@
-# commitly
+# commit-forge
 
-[![npm version](https://img.shields.io/npm/v/commitly.svg)](https://www.npmjs.com/package/commitly)
-[![npm downloads](https://img.shields.io/npm/dm/commitly.svg)](https://www.npmjs.com/package/commitly)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/commitly)](https://bundlephobia.com/package/commitly)
+[![npm version](https://img.shields.io/npm/v/commit-forge.svg)](https://www.npmjs.com/package/commit-forge)
+[![npm downloads](https://img.shields.io/npm/dm/commit-forge.svg)](https://www.npmjs.com/package/commit-forge)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/commit-forge)](https://bundlephobia.com/package/commit-forge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/ayaanraza9/commitly.svg?style=social&label=Star)](https://github.com/ayaanraza9/commitly)
-[![GitHub forks](https://img.shields.io/github/forks/ayaanraza9/commitly.svg?style=social&label=Fork)](https://github.com/ayaanraza9/commitly)
+[![GitHub stars](https://img.shields.io/github/stars/ayaanraza9/commit-forge.svg?style=social&label=Star)](https://github.com/ayaanraza9/commit-forge)
+[![GitHub forks](https://img.shields.io/github/forks/ayaanraza9/commit-forge.svg?style=social&label=Fork)](https://github.com/ayaanraza9/commit-forge)
 
 A lightweight CLI tool for generating, linting, and creating commits with enforced formatting. Perfect for teams that want consistent commit messages with JIRA integration.
 
@@ -32,13 +32,13 @@ A lightweight CLI tool for generating, linting, and creating commits with enforc
 ### Global Installation
 
 ```bash
-npm install -g commitly
+npm install -g commit-forge
 ```
 
 ### Local Installation
 
 ```bash
-npm install --save-dev commitly
+npm install --save-dev commit-forge
 ```
 
 ## Usage
@@ -46,23 +46,23 @@ npm install --save-dev commitly
 ### Generate a commit message
 
 ```bash
-commitly generate --jira TB-123 --category feat --message "add login" --description "Implement login flow"
+commit-forge generate --jira TB-123 --category feat --message "add login" --description "Implement login flow"
 ```
 
 ### Lint a commit message
 
 ```bash
 # From a file
-commitly lint .git/COMMIT_EDITMSG
+commit-forge lint .git/COMMIT_EDITMSG
 
 # From stdin
-echo "[TB-123] ✨ feat: add feature" | commitly lint
+echo "[TB-123] ✨ feat: add feature" | commit-forge lint
 ```
 
 ### Interactive commit
 
 ```bash
-commitly commit
+commit-forge commit
 ```
 
 This will:
@@ -75,17 +75,17 @@ This will:
 ### With flags (non-interactive)
 
 ```bash
-commitly commit --jira TB-123 --category feat --message "add login" --description "Implement login flow"
+commit-forge commit --jira TB-123 --category feat --message "add login" --description "Implement login flow"
 ```
 
 ### Using npm scripts
 
-If you have `commitly` installed locally in your project, you can add a commit script to your `package.json`:
+If you have `commit-forge` installed locally in your project, you can add a commit script to your `package.json`:
 
 ```json
 {
 	"scripts": {
-		"commit": "commitly commit"
+		"commit": "commit-forge commit"
 	}
 }
 ```
@@ -147,7 +147,7 @@ You can use this tool as a git commit-msg hook to automatically validate commit 
 ```bash
 # Create the hook
 echo '#!/bin/sh
-commitly lint "$1"' > .git/hooks/commit-msg
+commit-forge lint "$1"' > .git/hooks/commit-msg
 
 # Make it executable
 chmod +x .git/hooks/commit-msg
