@@ -1,0 +1,33 @@
+{
+	"name": "commit-mate",
+	"version": "1.0.0",
+	"description": "A lightweight CLI tool for generating, linting, and creating commits with enforced formatting",
+	"main": "dist/cli.js",
+	"bin": {
+		"commit-mate": "./dist/cli.js"
+	},
+	"scripts": {
+		"build": "bun run build.js",
+		"prepack": "npm run build",
+		"prepublishOnly": "npm run build",
+		"publish": "npm publish",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"git",
+		"commit",
+		"commit-message",
+		"lint",
+		"cli",
+		"jira",
+		"conventional-commits"
+	],
+	"author": "Ayaan Raza",
+	"license": "MIT",
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"files": [
+		"dist"
+	]
+}

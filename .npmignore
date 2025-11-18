@@ -1,0 +1,15 @@
+node_modules/
+.git/
+.gitignore
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+commit-tool.js
+bin/
+lib/
+build.js
+README.md
+
