@@ -1,10 +1,10 @@
 {
-	"name": "commit-mate",
+	"name": "commitly",
 	"version": "1.0.0",
 	"description": "A lightweight CLI tool for generating, linting, and creating commits with enforced formatting",
 	"main": "dist/cli.js",
 	"bin": {
-		"commit-mate": "./dist/cli.js"
+		"commitly": "./dist/cli.js"
 	},
 	"scripts": {
 		"build": "bun run build.js",

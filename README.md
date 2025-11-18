@@ -1,11 +1,11 @@
-# commit-mate
+# commitly
 
-[![npm version](https://img.shields.io/npm/v/commit-mate.svg)](https://www.npmjs.com/package/commit-mate)
-[![npm downloads](https://img.shields.io/npm/dm/commit-mate.svg)](https://www.npmjs.com/package/commit-mate)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/commit-mate)](https://bundlephobia.com/package/commit-mate)
+[![npm version](https://img.shields.io/npm/v/commitly.svg)](https://www.npmjs.com/package/commitly)
+[![npm downloads](https://img.shields.io/npm/dm/commitly.svg)](https://www.npmjs.com/package/commitly)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/commitly)](https://bundlephobia.com/package/commitly)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/ayaanraza9/commit-mate.svg?style=social&label=Star)](https://github.com/ayaanraza9/commit-mate)
-[![GitHub forks](https://img.shields.io/github/forks/ayaanraza9/commit-mate.svg?style=social&label=Fork)](https://github.com/ayaanraza9/commit-mate)
+[![GitHub stars](https://img.shields.io/github/stars/ayaanraza9/commitly.svg?style=social&label=Star)](https://github.com/ayaanraza9/commitly)
+[![GitHub forks](https://img.shields.io/github/forks/ayaanraza9/commitly.svg?style=social&label=Fork)](https://github.com/ayaanraza9/commitly)
 
 A lightweight CLI tool for generating, linting, and creating commits with enforced formatting. Perfect for teams that want consistent commit messages with JIRA integration.
 
@@ -32,13 +32,13 @@ A lightweight CLI tool for generating, linting, and creating commits with enforc
 ### Global Installation
 
 ```bash
-npm install -g commit-mate
+npm install -g commitly
 ```
 
 ### Local Installation
 
 ```bash
-npm install --save-dev commit-mate
+npm install --save-dev commitly
 ```
 
 ## Usage
@@ -46,23 +46,23 @@ npm install --save-dev commit-mate
 ### Generate a commit message
 
 ```bash
-commit-mate generate --jira TB-123 --category feat --message "add login" --description "Implement login flow"
+commitly generate --jira TB-123 --category feat --message "add login" --description "Implement login flow"
 ```
 
 ### Lint a commit message
 
 ```bash
 # From a file
-commit-mate lint .git/COMMIT_EDITMSG
+commitly lint .git/COMMIT_EDITMSG
 
 # From stdin
-echo "[TB-123] ✨ feat: add feature" | commit-mate lint
+echo "[TB-123] ✨ feat: add feature" | commitly lint
 ```
 
 ### Interactive commit
 
 ```bash
-commit-mate commit
+commitly commit
 ```
 
 This will:
@@ -75,17 +75,17 @@ This will:
 ### With flags (non-interactive)
 
 ```bash
-commit-mate commit --jira TB-123 --category feat --message "add login" --description "Implement login flow"
+commitly commit --jira TB-123 --category feat --message "add login" --description "Implement login flow"
 ```
 
 ### Using npm scripts
 
-If you have `commit-mate` installed locally in your project, you can add a commit script to your `package.json`:
+If you have `commitly` installed locally in your project, you can add a commit script to your `package.json`:
 
 ```json
 {
 	"scripts": {
-		"commit": "commit-mate commit"
+		"commit": "commitly commit"
 	}
 }
 ```
@@ -147,7 +147,7 @@ You can use this tool as a git commit-msg hook to automatically validate commit 
 ```bash
 # Create the hook
 echo '#!/bin/sh
-commit-mate lint "$1"' > .git/hooks/commit-msg
+commitly lint "$1"' > .git/hooks/commit-msg
 
 # Make it executable
 chmod +x .git/hooks/commit-msg
