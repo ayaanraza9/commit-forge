@@ -1,0 +1,17 @@
+{
+	"jira": {
+		"enabled": true,
+		"required": true,
+		"allowNoJira": true
+	},
+	"emoji": {
+		"enabled": true
+	},
+	"subject": {
+		"maxLength": 72
+	},
+	"description": {
+		"required": false
+	}
+}
+

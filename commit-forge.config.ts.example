@@ -1,0 +1,20 @@
+// Example TypeScript configuration file
+// Requires: ts-node, tsx, or esbuild-register
+
+module.exports = {
+	jira: {
+		enabled: process.env.USE_JIRA !== "false",
+		required: true,
+		allowNoJira: true,
+	},
+	emoji: {
+		enabled: true,
+	},
+	subject: {
+		maxLength: 72,
+	},
+	description: {
+		required: false,
+	},
+};
+

@@ -1,0 +1,10 @@
+{
+	"jira": {
+		"enabled": true,
+		"required": false,
+		"allowNoJira": true
+	},
+	"emoji": {
+		"enabled": false
+	}
+}

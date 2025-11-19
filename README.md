@@ -140,6 +140,188 @@ Commit messages follow this format:
 Optional longer description here
 ```
 
+## Configuration
+
+You can customize `commit-forge` behavior by creating a configuration file in your project root. The tool will automatically look for configuration files in the following order:
+
+1. `.commit-forge.json`
+2. `commit-forge.config.json`
+3. `.commit-forge.ts`
+4. `commit-forge.config.ts`
+5. `.commit-forge.js`
+6. `commit-forge.config.js`
+
+### Configuration Options
+
+Create a `.commit-forge.json` file in your project root:
+
+```json
+{
+	"jira": {
+		"enabled": true,
+		"required": true,
+		"allowNoJira": true
+	},
+	"emoji": {
+		"enabled": true
+	},
+	"subject": {
+		"maxLength": 72
+	},
+	"description": {
+		"required": false
+	}
+}
+```
+
+#### JIRA Configuration
+
+- `jira.enabled` (boolean, default: `true`) - Enable/disable JIRA ID support
+- `jira.required` (boolean, default: `true`) - Require JIRA ID in commits
+- `jira.allowNoJira` (boolean, default: `true`) - Allow "NO-JIRA" as a valid value
+
+**Example: Disable JIRA completely**
+
+```json
+{
+	"jira": {
+		"enabled": false
+	}
+}
+```
+
+**Example: Make JIRA optional (not required)**
+
+```json
+{
+	"jira": {
+		"enabled": true,
+		"required": false,
+		"allowNoJira": true
+	}
+}
+```
+
+#### Emoji Configuration
+
+- `emoji.enabled` (boolean, default: `true`) - Show emojis in category formatting
+
+**Example: Disable emojis**
+
+```json
+{
+	"emoji": {
+		"enabled": false
+	}
+}
+```
+
+#### Subject Configuration
+
+- `subject.maxLength` (number, default: `72`) - Maximum length for commit message subject line
+
+**Example: Change max length to 100 characters**
+
+```json
+{
+	"subject": {
+		"maxLength": 100
+	}
+}
+```
+
+#### Description Configuration
+
+- `description.required` (boolean, default: `false`) - Require description in commits
+
+**Example: Require description**
+
+```json
+{
+	"description": {
+		"required": true
+	}
+}
+```
+
+### JavaScript Configuration File
+
+You can also use a JavaScript file for more dynamic configuration:
+
+```javascript
+// commit-forge.config.js
+module.exports = {
+	jira: {
+		enabled: process.env.USE_JIRA !== "false",
+		required: true,
+		allowNoJira: true,
+	},
+	emoji: {
+		enabled: true,
+	},
+	subject: {
+		maxLength: 72,
+	},
+	description: {
+		required: false,
+	},
+};
+```
+
+### TypeScript Configuration File
+
+TypeScript configuration files are also supported! You'll need one of these packages installed:
+
+- `ts-node` (recommended)
+- `tsx`
+- `esbuild-register`
+
+```typescript
+// commit-forge.config.ts
+import type { CommitForgeConfig } from "commit-forge";
+
+const config: CommitForgeConfig = {
+	jira: {
+		enabled: process.env.USE_JIRA !== "false",
+		required: true,
+		allowNoJira: true,
+	},
+	emoji: {
+		enabled: true,
+	},
+	subject: {
+		maxLength: 72,
+	},
+	description: {
+		required: false,
+	},
+};
+
+export default config;
+```
+
+Or using CommonJS syntax:
+
+```typescript
+// commit-forge.config.ts
+module.exports = {
+	jira: {
+		enabled: process.env.USE_JIRA !== "false",
+		required: true,
+		allowNoJira: true,
+	},
+	emoji: {
+		enabled: true,
+	},
+	subject: {
+		maxLength: 72,
+	},
+	description: {
+		required: false,
+	},
+};
+```
+
 ## Git Hook Integration
 
 You can use this tool as a git commit-msg hook to automatically validate commit messages:
@@ -205,4 +387,4 @@ MIT
 ## Contributors
 
 - [Ayaan Raza](https://github.com/ayaanraza9) - Creator
-- [Sawan Kumar](https://github.com/Sawannrl123) - Maintainer
+- [Sawan Kumar](https://github.com/Sawannrl123) - Collaborator
