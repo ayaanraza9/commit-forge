@@ -1,6 +1,6 @@
 {
 	"jira": {
-		"enabled": true,
+		"enabled": false,
 		"required": false,
 		"allowNoJira": true
 	},
